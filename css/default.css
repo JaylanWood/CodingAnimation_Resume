@@ -1,0 +1,20 @@
+.token.selector {
+    color: black;
+}
+
+.token.property {
+    color: black;
+}
+
+.token.punctuation {
+    color: black;
+}
+
+.token.comment {
+    color: black;
+}
+
+#htmlCode {
+    height: 100vh;
+    overflow: auto;
+}
