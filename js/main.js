@@ -85,7 +85,7 @@ function writeCode(preStr, addingStr, speed, fn) {
         htmlCode.scrollTop = htmlCode.scrollHeight // 滚动到底
         if (n > addingStr.length) {
             window.clearInterval(id)
-            fn.call() // 异步，调用
+            fn && fn.call() // 异步，调用
         }
     }, 200 / speed)
 }
@@ -100,7 +100,7 @@ function writeMarkdown(preStr, addingStr, speed, fn) {
         markdownCode.innerHTML = Prism.highlight(currentStr, Prism.languages.markdown);
         if (n > addingStr.length) {
             window.clearInterval(id)
-            fn.call() // 异步，调用
+            fn && fn.call() // 异步，调用
         }
     }, 200 / speed)
 }
@@ -112,5 +112,5 @@ function createPaper(fn) {
     content.id = 'content'
     paper.appendChild(content)
     document.body.appendChild(paper)
-    fn.call() //同步，调用
+    fn && fn.call() //同步，调用
 }
